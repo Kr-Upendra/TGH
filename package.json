@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "A task where I need to create a web app using Nodejs, ExpressJS and MongoDB.",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "nodemon server.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
