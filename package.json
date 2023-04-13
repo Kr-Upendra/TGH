@@ -1,0 +1,26 @@
+{
+  "name": "tgh",
+  "version": "1.0.0",
+  "description": "A task where I need to create a web app using Nodejs, ExpressJS and MongoDB.",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kr-Upendra/TGH.git"
+  },
+  "keywords": [
+    "ToDoList",
+    "Nodejs",
+    "ExpressJS",
+    "MongoDB",
+    "WebApp"
+  ],
+  "author": "Upendra Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kr-Upendra/TGH/issues"
+  },
+  "homepage": "https://github.com/Kr-Upendra/TGH#readme"
+}
