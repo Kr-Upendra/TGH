@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const todoSchema = new mongoose.Schema({
   index: {
     type: Number,
-    max: 20,
+    default: 0,
   },
   name: {
     type: String,
