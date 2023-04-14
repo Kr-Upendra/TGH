@@ -1,5 +1,6 @@
 // importing packages
 import express from "express";
+import todoRoute from "./routes/todoRoute.js";
 const app = express();
 
 // Middlewares
@@ -12,6 +13,8 @@ app.get("/", (req, res) => {
     message: "Testing server endpoint!",
   });
 });
+
+app.use("/api/todos/", todoRoute);
 
 app.all("*", (req, res) => {
   res.status(404).json({
