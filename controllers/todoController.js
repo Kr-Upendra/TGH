@@ -2,9 +2,12 @@ import TodoModel from "../models/todoModel.js";
 
 const getAllTodos = async (req, res) => {
   try {
+    const todos = await TodoModel.find();
     res.status(200).json({
       status: "success",
-      message: "Route to get all todos.",
+      message: "successfully got all todos!",
+      totalTodos: todos.length,
+      todos: todos,
     });
   } catch (err) {
     res.status(404).json({
@@ -17,9 +20,12 @@ const getAllTodos = async (req, res) => {
 
 const getSingleTodo = async (req, res) => {
   try {
+    const id = req.params.id;
+    const todo = await TodoModel.findById(id);
     res.status(200).json({
       status: "success",
-      message: "Route to get single todos.",
+      message: "successfully get the todo that you want!",
+      todo: todo,
     });
   } catch (err) {
     res.status(404).json({
@@ -49,9 +55,17 @@ const createTodo = async (req, res) => {
 
 const updateTodo = async (req, res) => {
   try {
+    const updatedTodo = await TodoModel.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+      }
+    );
     res.status(200).json({
       status: "success",
-      message: "Route to update todos.",
+      message: "todo updated successfully!",
+      todo: updatedTodo,
     });
   } catch (err) {
     res.status(404).json({
@@ -64,9 +78,10 @@ const updateTodo = async (req, res) => {
 
 const deleteTodo = async (req, res) => {
   try {
+    const todoToDelete = await TodoModel.findByIdAndDelete(req.params.id);
     res.status(200).json({
       status: "success",
-      message: "Route to delete todos.",
+      message: "todo deleted successfully!",
     });
   } catch (err) {
     res.status(404).json({

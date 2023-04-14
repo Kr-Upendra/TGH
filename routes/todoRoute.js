@@ -8,7 +8,7 @@ router
   .post(todoController.createTodo);
 
 router
-  .route("/id")
+  .route("/:id")
   .get(todoController.getSingleTodo)
   .patch(todoController.updateTodo)
   .delete(todoController.deleteTodo);
